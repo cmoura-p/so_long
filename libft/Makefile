@@ -9,7 +9,9 @@ AR				= ar rcs
 
 # Source Files
 C_SOURCE = 	ft_atol.c ft_bzero.c ft_calloc.c ft_memset.c ft_strlen.c \
-			get_next_line.c get_next_line_utils.c
+			ft_strncmp.c ft_print_num.c ft_check_format.c \
+			ft_printf.c ft_print_str.c ft_print_char.c ft_print_ptr.c
+#			get_next_line.c get_next_line_utils.c \
 
 OBJ = $(C_SOURCE:.c=.o)
 

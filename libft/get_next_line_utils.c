@@ -79,7 +79,7 @@ void	ft_getcpy(char *str)
 	while (str[j])
 		str[j++] = 0;
 }
-
+/*
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
@@ -96,7 +96,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (ptr);
 }
-
+*/
 // ft_getchr
 // verifica se existe o caracter passado em c no pointer de char passado em s
 // devolve a string encontrada ate o caracter

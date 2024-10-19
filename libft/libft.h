@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:04:20 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/10/17 19:41:08 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/10/19 21:06:36 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		ft_print_char(int c);
 int		ft_print_str(char *str);
 int		ft_print_num(long n, char *base, char datatype);
 int		ft_print_ptr(size_t n, char *base);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 // get_next_line
 char	*get_next_line(int fd);
