@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   loading_map.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 17:40:29 by cmoura-p          #+#    #+#             */
+/*   Updated: 2024/10/20 18:48:24 by cmoura-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void	load_textures(t_data *data)
+void	load_sprites(t_data *data)
 {
 	int		i;
 	int		j;
 
-	data->textures->walls = mlx_xpm_file_to_image(data->mlx,
-			"./textures/wall.xpm", &i, &j);
-	data->textures->floor = mlx_xpm_file_to_image(data->mlx,
-			"./textures/floor.xpm", &i, &j);
-	data->textures->player = mlx_xpm_file_to_image(data->mlx,
-			"./textures/player.xpm", &i, &j);
-	data->textures->collectible = mlx_xpm_file_to_image(data->mlx,
-			"./textures/collectible.xpm", &i, &j);
-	data->textures->exit = mlx_xpm_file_to_image(data->mlx,
-			"./textures/exit.xpm", &i, &j);
+	data->sprites->walls = mlx_xpm_file_to_image(data->mlx,
+			"./sprites/wall.xpm", &i, &j);
+	data->sprites->floor = mlx_xpm_file_to_image(data->mlx,
+			"./sprites/floor.xpm", &i, &j);
+	data->sprites->player = mlx_xpm_file_to_image(data->mlx,
+			"./sprites/player.xpm", &i, &j);
+	data->sprites->gift = mlx_xpm_file_to_image(data->mlx,
+			"./sprites/gift.xpm", &i, &j);
+	data->sprites->exit = mlx_xpm_file_to_image(data->mlx,
+			"./sprites/exit.xpm", &i, &j);
 }
 
 int	load_map(t_data *data)
@@ -40,17 +52,17 @@ void	put_image(t_data *data, char c, int x, int y)
 {
 	if (c == '1')
 		mlx_put_image_to_window(data->mlx, data->win,
-			data->textures->walls, x * 32, y * 32);
+			data->sprites->walls, x * 32, y * 32);
 	else if (c == 'C')
 		mlx_put_image_to_window(data->mlx, data->win,
-			data->textures->collectible, x * 32, y * 32);
+			data->sprites->gift, x * 32, y * 32);
 	else if (c == 'E')
 		mlx_put_image_to_window(data->mlx, data->win,
-			data->textures->exit, x * 32, y * 32);
+			data->sprites->exit, x * 32, y * 32);
 	else
 		mlx_put_image_to_window(data->mlx, data->win,
-			data->textures->floor, x * 32, y * 32);
+			data->sprites->floor, x * 32, y * 32);
 	mlx_put_image_to_window(data->mlx, data->win,
-		data->textures->player, data->map->player_x * 32,
+		data->sprites->player, data->map->player_x * 32,
 		data->map->player_y * 32);
 }

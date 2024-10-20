@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   play_game.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 17:40:29 by cmoura-p          #+#    #+#             */
+/*   Updated: 2024/10/20 22:43:58 by cmoura-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	play_game(t_data *data)
@@ -44,9 +56,9 @@ void	walk(t_data *data, int next_y, int next_x)
 	}
 	else if (data->map->map[next_y][next_x] == 'E')
 	{
-		if (data->map->collected == data->map->collectibles)
+		if (data->map->collected == data->map->gift)
 		{
-			ft_printf("You won!\n");
+			write(1, "Game Over!\n", 11);
 			handle_window(data);
 		}
 	}

@@ -6,8 +6,8 @@ MLX_DIR 	= ./minilibx-linux
 CC			= cc
 FLAGS		= -Wall -Werror -Wextra -g
 MLX_FLAGS 	= -L./minilibx-linux -lmlx -lX11 -lXext
-SRCS		= ./main.c starting.c valid_board.c utils.c checking.c \
-				ending.c loading_map.c play_game.c
+SRCS		= ./main.c starting.c board_invalid.c utils.c checking.c \
+				ending.c loading_map.c play_game.c flowing.c
 OBJ_DIR		= ./obj
 OBJS 		= $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 RM			= rm -f
