@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:04:20 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/10/19 21:06:36 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:11:30 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ void	ft_bzero(void *buff, size_t n);
 void	*ft_calloc(size_t n, size_t size);
 void	*ft_memset(void *ptr, int value, size_t num);
 size_t	ft_strlen(const char *s);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *str);
 void	*ft_memcpy(void *dest, const void *src, size_t size);
 
 // printf
-int	ft_printf(const char *format, ...);
-int	ft_check_format(char datatype, va_list ap);
-int	ft_print_char(int c);
-int	ft_print_str(char *str);
-int	ft_print_num(long n, char *base, char datatype);
-int	ft_print_ptr(size_t n, char *base);
+int		ft_printf(const char *format, ...);
+int		ft_check_format(char datatype, va_list ap);
+int		ft_print_char(int c);
+int		ft_print_str(char *str);
+int		ft_print_num(long n, char *base, char datatype);
+int		ft_print_ptr(size_t n, char *base);
 
 // get_next_line
 char	*get_next_line(int fd);

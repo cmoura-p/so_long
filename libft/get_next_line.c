@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:27:30 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/10/19 18:59:18 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:10:20 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-

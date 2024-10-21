@@ -6,18 +6,20 @@
 /*   By: cmoura-p <cmoura-p@students.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:40:29 by cmoura-p          #+#    #+#             */
-/*   Updated: 2024/10/20 22:23:42 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:07:57 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	counter_field(int fd)
+int	counter_field(char *ber)
 {
 	int		num_lin;
 	char	segment;
 	int		bytes_read;
+	int		fd;
 
+	fd = open(ber, O_RDONLY);
 	if (fd < 0)
 		return (0);
 	num_lin = 0;
@@ -49,17 +51,17 @@ char	**start_lines(char **ber, t_map *map)
 	char	**line;
 	int		fd;
 
-	fd = open(*ber, O_RDONLY);
-	num_lin = counter_field(fd);
+	num_lin = counter_field(*ber);
 	fd = open(*ber, O_RDONLY);
 	if (fd < 0 || num_lin <= 0)
 		return (NULL);
 	line = ft_calloc(num_lin + 1, sizeof(char *));
 	i = 0;
 	line[i] = get_next_line(fd);
-	while (line[i])
+	while (i < num_lin)
 	{
-		if (ft_strlen(line[0]) != ft_strlen(line[i]))
+		if (!lastline(line, i, num_lin)
+			&& (ft_strlen(line[0]) != ft_strlen(line[i])))
 			return (free_map(line), NULL);
 		i++;
 		line[i] = get_next_line(fd);
@@ -86,4 +88,20 @@ int	start_map(t_map *map)
 	}
 	map->map[i] = NULL;
 	return (0);
+}
+
+int	lastline(char **line, int i, int nl)
+{
+	unsigned long	x;
+
+	if (i == nl - 1)
+	{
+		x = ft_strlen(line[i]);
+		if ((ft_strlen(line[0]) - 1 == x) && line[i][x - 1] != '\n')
+			return (1);
+		else
+			return (0);
+	}
+	else
+		return (0);
 }
